@@ -1,5 +1,9 @@
 Format: http://dep.debian.net/deps/dep5
-Upstream-Name: zram-config
+Upstream-Name: zram-custom
+
+Files: debian/zram-custom.upstart
+Copyright: 2013 Mirantis
+License: GPL-3.0+
 
 Files: *
 Copyright: 2012 Canonical Ltd.

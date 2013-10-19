@@ -1,9 +1,11 @@
-description	"Initializes zram swaping"
-author		"Adam Conrad <adconrad@canonical.com>"
+description "Initializes zram ext2 partition. Based on zram-config by Adam Conrad"
+author      "Max Rasskazov <mrasskazov@mirantis.com>"
 
 start on runlevel [2345]
 
 pre-start script
+  # volume size in GB
+  SIZE=56
   # load dependency modules
   NRDEVICES=1
   if modinfo zram | grep -q ' zram_num_devices:' 2>/dev/null; then
@@ -16,8 +18,8 @@ pre-start script
   modprobe zram $MODPROBE_ARGS
 
   # Calculate memory to use for zram (1/2 of ram)
-  totalmem=`free | grep -e "^Mem:" | sed -e 's/^Mem: *//' -e 's/  *.*//'`
-  mem=$((1024 * 1024 * 1024))
+  # totalmem=`free | grep -e "^Mem:" | sed -e 's/^Mem: *//' -e 's/  *.*//'`
+  mem=$(( ${SIZE} * 1024 * 1024 * 1024))
 
   # initialize the devices
   for i in $(seq ${NRDEVICES}); do

@@ -1,13 +1,13 @@
-Source: zram-config
+Source: zram-custom
 Section: utils
 Priority: extra
-Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Maintainer: Max Rasskazov <mrasskazov@mirantis.com>
 Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.2
 
-Package: zram-config
+Package: zram-custom
 Architecture: all
 Depends: ${misc:Depends}
-Description: Upstart job to enable zram support
- This installs a simple Upstart job to enable zram support
+Description: Upstart job to create zram based ext2 partitions
+ This installs a simple Upstart job to create zram based partitions
  on kernels that have the module available.

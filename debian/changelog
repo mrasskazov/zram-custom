@@ -1,5 +1,5 @@
-zram-config (0.1) precise; urgency=low
+zram-custom (0.1) precise; urgency=low
 
-  * Initial Release of zram swap configuration management.
+  * Initial Release of zram ext2 partition configuration management.
 
- -- Adam Conrad <adconrad@ubuntu.com>  Mon, 09 Jan 2012 04:01:46 -0700
+ -- Max Rasskazov <mrasskazov@mirantis.com>  Sat, 19 Oct 2013 16:10:42 +0400
